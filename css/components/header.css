@@ -1,0 +1,121 @@
+.header{
+    position: relative;
+    min-height: 840px;
+    background-size: cover;         /*Масштабирует изображение как можно больше c сохранением пропорций изображения (обрезка)*/
+    background-repeat: no-repeat;
+    background-position: center;
+  /*  background-attachment: fixed;   /*Параллакс-эффект*/
+    display: flex;
+    align-items: flex-end;          /*Выравниваем содержимое по низу*/
+}
+
+.header:before { /*создаёт псевдоэ!, к/ я! первым потомком выбранного э!. Создается перед, а для absolute - поверх*/
+    content: "";            /*сюда можно вписать текст. Можно оставить пустым. Но совсем без этого поля before не работает*/
+    position: absolute;     /*позиционируем поверх родительского*/
+    top: 0;
+    left: 0;
+    height: 101%;           /*растягиваем до размера родительсокго э!*/
+    width: 100%;            /*растягиваем до размера родительсокго э!*/
+    background-image: linear-gradient(180deg, #242B33 11.98%, rgba(45, 52, 60, 0.38) 51.04%, #242B33 92.19%);
+}
+
+.header-content {          /*чтобы before не перекрывал содержимое*/
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 580px;
+    margin: auto;           /*автоматическое выравнивание по горизонтали*/
+    padding-bottom: 74px;
+}
+
+.header__contacts{
+    margin-top: 340px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* максимально допустимо разносит элементы*/
+    }
+
+.header__contacts-item{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all .9s ease-out;
+}
+
+.header__contacts-item:hover{
+    color: #d4c17f;
+}
+
+.header__contacts-item:hover [class*="icon-"]:before {
+    color: #d4c17f;
+    transition: all .9s ease-out;
+}
+
+.header__contacts-item [class*="icon-"] {
+    margin-right: 15px;
+}
+
+.header__contacts-item .icon-placeholder:before {       /* зачем здеся нужен before - загадка */
+    font-size: 21px;
+}
+
+.header__mouse-effect{
+    position: absolute;
+    top: 210px;
+    left: 50%;                      /* центрирование по горизонтали */
+    transform:translateX(-50%)      /* центрирование по горизонтали */
+}
+
+.brand {
+    width: 134px;
+    height: 66px;
+}
+
+.header__mouse-effect-mouse{
+    animation: downUp 0.9s cubic-bezier(0.1,0.25,0.1,1) 0s infinite alternate both;
+}
+
+@keyframes downUp {
+    from {
+        transform: translateY(-5px);
+    }
+    to {
+        transform: translateY(5px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .header{
+        min-height: 700px;
+    }
+
+    .header__contacts{
+        margin-top: 230px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .header__contacts{
+        margin-top: 180px;
+        display: block;
+    }
+
+    .header__contacts-item{
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 303px) {
+    .header__contacts{
+        line-height: 50px;
+        margin-top: 80px;
+    }
+
+    .header__mouse-effect{
+        top: 280px;
+    }
+}

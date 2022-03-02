@@ -1,0 +1,120 @@
+@import "../libs/bootstrap5/bootstrap-grid.min.css";
+@import "../libs/bootstrap5/bootstrap-reboot.min.css";
+@import "../fonts/icomoon/style.css";
+@import "components/header.css";
+@import "components/navbar.css";
+@import "components/section.css";
+@import "components/other.css";
+@import "components/bootstrap-skins.css";
+@import "components/button.css";
+@import "components/footer.css";
+
+.font1 {
+    font-family: 'Playfair Display', serif !important;
+}
+
+.font2 {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+.font3 {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.text-accent{
+    color: #d4c17f !important;
+}
+
+h1, h2 {
+    font-family: 'Playfair', serif !important;
+    font-size: 48px;
+    line-height: 64px;      /*межстрочный интервал*/
+    font-weight: 700;
+    color: #D4C17F;
+}
+
+h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #d4c17f
+}
+
+img{
+    width: 100%;
+}
+
+ul {
+    list-style: none
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    min-width: 280px;
+    background-color: #242b33;
+    overflow-x: hidden;
+}
+
+input{
+    outline: none;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    transition: all .09s ease-out;
+    padding: 13px;
+    color: white;
+}
+
+input:focus{
+    background-color: rgba(255, 255, 255, .3)
+}
+
+input::placeholder{
+    color: #bebebe;
+}
+
+@media (max-width: 1200px) {
+    p{
+        font-size: 14px;
+    }
+
+    .fz-lg-13{
+        font-size: 13px;
+    }
+
+    .fz11{
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    h2{
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    h1{
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 400px) {
+    h2{
+        line-height: 40px;
+    }
+}
+
+@media (min-width: 304px){
+    h1{
+        line-height: 50px;
+    }
+}

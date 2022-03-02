@@ -1,0 +1,131 @@
+.section {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#cta{
+  min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#cta::before {
+    content: "";            /*сюда можно вписать текст. Можно оставить пустым. Но совсем без этого поля before не работает*/
+    position: absolute;     /*позиционируем поверх родительского*/
+    top: 0;
+    left: 0;
+    height: 100%;           /*растягиваем до размера родительсокго э!*/
+    width: 100%;            /*растягиваем до размера родительсокго э!*/
+    background: linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9));
+    z-index: 0;
+}
+
+.cta__content{
+position: relative;
+z-index: 2;
+}
+
+.section__number {
+    top:50%;
+    left: 258px;
+    position: absolute;
+    font-family: "Playfair", serif;
+    font-weight: 700;
+    opacity: .02;
+    font-size: 400px;
+    line-height: 1px;
+    z-index: -1;
+}
+
+.section__number_right{
+    right: 258px;
+    left: unset !important;
+}
+
+.form{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form__item{
+    width: calc(50% - 15px);
+    margin-bottom: 35px;
+}
+
+#faq .form__item{
+    width: 100%;
+    margin: 0px;
+}
+
+#faq{
+    margin-bottom: 120px;
+}
+
+.d-block{
+    display: block;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.w100{
+    width: 100%;
+}
+ /*
+как создать 2 колонки
+
+ .a{
+    display: flex;
+     flex-flow: row wrap;
+     width: 100%
+ }
+
+ .a > b {
+    width: 50%
+ }
+ 
+ */
+
+@media (max-width: 1500px){
+    .section__number{
+        left: 8px;
+    }
+
+    .section__number_right{
+        right: 8px;
+    }
+}
+
+@media (max-width: 992px){
+    .form{
+        justify-content: center;
+    }
+
+    .form__item{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .section__number{
+        font-size: 240px;
+    }
+
+    .section{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .cta__content{
+        text-align: center;
+        padding: 20px;
+    }
+}
